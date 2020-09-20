@@ -29,5 +29,9 @@ For producing numbers I've written a Java program which is attached in `randomGe
 
 ### Section 2: MIPS
 
+Due to builtin floating point implementation of MIPS, First I read numbers from file and by `MTC1` and `MFC1` instructions, convert read integers to floating point and save them in a 4000 bytes array. Besides, reserve registers `t0` to `t9` for digits counter. Then I start reading numbers from this array and divide them by 10 until they are greater than 10. when the number gets smaller than 10 we find its most significant digit by casing between 0 to 9 and increment the register coresponding to the digit. Finaly, by using the vlauses of registers `t0` to `t9` I've computed the percentage of asked digit `d`, amoung all digits and output it in the console and file.
+
 
 ### Section 3: 8086
+
+At first, let's explain my implementaion of floating point in 8086. The 10 first bits are _fraction_. Next 5 bits are _power_. and the last bit is _sign bit_ whcich is always 0 due to our positive numbers. Also I've used _2's complement_ for _power_ instead of _bias notation_ and implementaion is so that it doesn't have much difference with _IEEE 754_ .
